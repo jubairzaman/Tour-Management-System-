@@ -13,6 +13,11 @@ const Admin = () => {
       });
   }, []);
 
+  const handlestetus = () => {
+
+
+  }
+
   const handleDelete = (id) => {
     axios
       .delete(`https://blooming-citadel-86534.herokuapp.com/register/${id}`)
@@ -44,6 +49,9 @@ const Admin = () => {
               </th>
               <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
                 Country
+              </th>
+              <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
+                Stetus
               </th>
               <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
                 Actions
@@ -80,6 +88,18 @@ const Admin = () => {
                     Volunteer list
                   </span>
                   {reg.event}
+                </td>
+
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                  <span class="inline-block w-1/3 md:hidden font-bold">
+                    Stetus
+                  </span>
+                  <button
+                    onClick={() => handlestetus(reg._id)}
+                    class="bg-yellow-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"
+                  >
+                    Pending
+                  </button>
                 </td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                   <span class="inline-block w-1/3 md:hidden font-bold">
